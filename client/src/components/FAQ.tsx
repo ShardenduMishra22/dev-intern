@@ -15,19 +15,19 @@ const FAQ: React.FC<FAQProps> = ({ question, answer }) => {
         className="flex justify-between items-center w-full py-4 text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-white font-medium">{question}</span>
+        <span className="text-slate-200 font-medium">{question}</span>
         <span className={`transition-transform duration-700 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
           {!isOpen ? (
-            <Plus className="text-gray-400" />
+            <Plus className="text-green-400" />
           ) : (
-            <Minus className="text-gray-400" />
+            <Minus className="text-red-400" />
           )}
         </span>
       </button>
       <div
         className={`overflow-hidden transition-max-height duration-700 ease-in-out ${isOpen ? 'max-h-[200px]' : 'max-h-0'}`}
       >
-        <div className="pb-4 text-gray-300">
+        <div className="pb-4 text-slate-300">
           <p>{answer}</p>
         </div>
       </div>
