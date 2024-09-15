@@ -9,7 +9,6 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/CSS-Battles" element={<CSSBattles />} />
-          {/* <Route path="/FAQ" element={<FAQ />} /> */}
         </Routes>
       </Router>
     </>

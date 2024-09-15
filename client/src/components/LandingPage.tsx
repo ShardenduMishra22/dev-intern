@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
+import Testimonial from './Testimonial';
 import FAQ_PART from "./FAQ_Part"
 
 const LandingPage: React.FC = () => {
@@ -77,6 +78,13 @@ const LandingPage: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+      <div>
+          <Testimonial/>
+      </div>
+      {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+
 
       {/* Here Starts The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
       <div>
