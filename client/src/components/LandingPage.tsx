@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
+import FAQ_PART from "./FAQ_Part"
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const LandingPage: React.FC = () => {
   };
 
   const handleClick = () => {
-    navigate('/css');
+    navigate('/CSS-Battles');
   };
 
   return (
@@ -76,6 +77,13 @@ const LandingPage: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Here Starts The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+      <div>
+          <FAQ_PART/>
+      </div>
+      {/* Here ENDs The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+    
     </div>
   );
 };
