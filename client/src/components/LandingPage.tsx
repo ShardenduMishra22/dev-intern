@@ -18,12 +18,16 @@ const LandingPage: React.FC = () => {
   };
 
   return (
+    <>
     <div className={`min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-gray-300 text-gray-900'} transition-colors duration-300`}>
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <div className="relative">
         {/* Full-Screen Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4">
           <div className="max-w-4xl mx-auto text-center">
+          <p className="mb-10 text-xl md:text-2xl relative rounded-full px-3 py-1 leading-6 text-gray-600 ring-2 ring-gray-900/10 hover:ring-gray-900/20">
+          Announcing our next round of funding. <a href="#" className="font-semibold text-purple-500"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+        </p>
             <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-in-up ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               DevForces | A Competitive Development Platform 
             </h1>
@@ -36,10 +40,10 @@ const LandingPage: React.FC = () => {
             and climb the <span className={`${isDarkMode ? 'text-purple-500' : 'text-purple-900 font-bold'}`}>ranks.</span>
           </p>
 
-            <div className="animate-fade-in-up animation-delay-600">
+            <div className="flex items-center justify-center gap-x-6 animate-fade-in-up animation-delay-600">
               <button 
                 onClick={handleClick} 
-                className={`px-8 py-3 rounded-lg font-semibold transition duration-300 shadow-lg transform hover:scale-105 ${
+                className={`text-xl px-8 py-3 rounded-lg font-semibold transition duration-300 shadow-lg transform hover:scale-105 ${
                   isDarkMode 
                     ? 'bg-white text-black hover:bg-gray-200' 
                     : 'bg-black text-white hover:bg-gray-900'
@@ -48,6 +52,7 @@ const LandingPage: React.FC = () => {
               >
                 Get Started
               </button>
+              <a href="#" className="text-xl font-semibold leading-6 text-gray-600">Learn more <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </section>
@@ -101,6 +106,7 @@ const LandingPage: React.FC = () => {
       {/* Here ENDs The Footer SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
     
     </div>
+    </>
   );
 };
 
