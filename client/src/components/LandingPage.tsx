@@ -28,7 +28,7 @@ const LandingPage: React.FC = () => {
           <p className="mb-10 text-xl md:text-2xl relative rounded-full px-3 py-1 leading-6 text-gray-600 ring-2 ring-gray-900/10 hover:ring-gray-900/20">
           Announcing our next round of funding. <a href="#" className="font-semibold text-purple-500"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
         </p>
-            <h1 className={`text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-in-up ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+            <h1 className={`text-3xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               DevForces | A Competitive Development Platform 
             </h1>
             <p className={`text-xl md:text-2xl mb-10 animate-fade-in-up animation-delay-300 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
