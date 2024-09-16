@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
-import Feature from './Feature';
+import Testimonial from './Testimonial';
+import FAQ_PART from "./FAQ_Part"
+import Footer from './Footer';
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ const LandingPage: React.FC = () => {
   };
 
   const handleClick = () => {
-    navigate('/css');
+    navigate('/CSS-Battles');
   };
 
   return (
@@ -81,8 +83,28 @@ const LandingPage: React.FC = () => {
             </svg>
           )}
         </div>
-        <Feature />
       </div>
+
+      {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+      <div>
+          <Testimonial/>
+      </div>
+      {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+
+
+      {/* Here Starts The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+      <div>
+          <FAQ_PART/>
+      </div>
+      {/* Here ENDs The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+
+
+      {/* Here Starts The Footer SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+      <div>
+          <Footer/>
+      </div>
+      {/* Here ENDs The Footer SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
+    
     </div>
     </>
   );

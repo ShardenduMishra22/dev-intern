@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.FAQ {
+  .custom-underline {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-in-out; 
+  }
+  
+  .custom-underline.underline-active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left; 
+  }  
+}
+
 .css-battles-page {
         --background-color: #18181B;
         --text-color: #A1A1AA;
