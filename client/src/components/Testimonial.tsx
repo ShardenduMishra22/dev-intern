@@ -66,7 +66,7 @@ const Testimonial = () => {
         </CarouselContent>
         <CarouselPrevious className="absolute top-1/2  transform -translate-y-1/2" />
         <CarouselNext className="absolute top-1/2 transform -translate-y-1/2" />
-      </Carousel>
+        </Carousel>
         </div>
         </section>
     </div>
