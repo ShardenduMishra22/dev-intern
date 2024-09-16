@@ -1,6 +1,6 @@
 import React from 'react';
-import { Moon, Sun, Github } from 'lucide-react';
-
+import { Moon, Sun} from 'lucide-react';
+import Google from "../../public/google.png";
 
 type NavbarProps = {
   isDarkMode: boolean;
@@ -13,7 +13,6 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
       <nav className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center">
           <img src='/devforces.jpeg' alt='DevForces Logo - A community for developers' className="h-10 mr-3" />
-          <div className="text-2xl font-bold">DevForces</div>
         </div>
         <div className="flex items-center space-x-4">
           <button 
@@ -23,9 +22,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
           >
             {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
           </button>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors duration-300">
+          {/* <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors duration-300">
             <Github size={24} />
-          </a>
+          </a> */}
+          <button className="flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-100 transition-all duration-300">
+            <img src={Google} alt='Google Logo' className="h-6 mr-2" />
+            <span className="text-base font-medium text-gray-700">Sign in</span>
+          </button>
         </div>
       </nav>
     </header>
