@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar'; // Import the Navbar component
+import Navbar from '../components/Navbar'; // Import the Navbar component
 import '../index.css';
-import Card from './Card';
+import Card from '../components/Card';
 
 const CSSBattles: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);

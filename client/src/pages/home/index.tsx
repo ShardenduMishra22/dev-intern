@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar from '../../components/Navbar';
 import Testimonial from './Testimonial';
 import FAQ_PART from "./FAQ_Part"
 import Footer from './Footer';

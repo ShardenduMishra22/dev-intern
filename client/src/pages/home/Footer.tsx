@@ -1,16 +1,13 @@
-import React from 'react'
-import { Github, Facebook, Youtube, Twitter, Instagram, Copyright } from 'lucide-react';
+import { Github, Facebook, Youtube, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
         <>
-
             <div className="min-h-[50vh] ">
                 <div className="cont flex flex-wrap   justify-center gap-10 md:justify-evenly mt-36">
-
                     <div className="flex ml-2 md:ml-0    flex-col  gap-11 items-start">
                         <div className="logo size-8 ">
-                            <img src="/devforces.jpeg" alt="logo" />
+                            <img src="./df_logo_256.png" alt="logo" />
                         </div>
                         <div className="text-xl w-full  xl:w-[30vw]">
                             Making the world a better place through constructing elegant hierarchies.

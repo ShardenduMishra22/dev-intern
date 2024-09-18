@@ -1,5 +1,5 @@
 {
-  "name": "dev_practise",
+  "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -25,10 +25,12 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
-    "@types/node": "^22.5.5",
+    "@types/eslint": "~9.6.1",
+    "@types/eslint__js": "~8.42.3",
+    "@types/node": "^22.5.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
