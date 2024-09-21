@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar'; // Import the Navbar component
 import '../index.css';
 import Card from '../components/Card';
+import { useTheme } from '../store/theme-provider'; // Import useTheme to manage dark mode globally
 
 const CSSBattles: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
-
-  // Function to toggle dark mode
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
+  // Access the global theme context
+  const { theme} = useTheme();
   const navigate = useNavigate();
+
+  // Determine if dark mode is enabled
+  const isDarkMode = theme === 'dark';
 
   // Handle card click navigation
   const handleCardClick = (path: string) => {
@@ -20,9 +19,9 @@ const CSSBattles: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-gray-white text-gray-900'} transition-colors duration-300`}>
-      {/* Include the Navbar and pass the dark mode props */}
-      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+    <div className={`min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-gray-100 text-gray-900'} transition-colors duration-300`}>
+      {/* Include the Navbar */}
+      <Navbar />
 
       <div className="pt-20"> {/* Adjust padding to avoid overlap with navbar */}
         <h1 className="text-5xl font-bold text-center">A Competitive Development Platform</h1>

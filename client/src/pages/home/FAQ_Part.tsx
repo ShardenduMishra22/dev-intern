@@ -1,10 +1,13 @@
 import React from 'react';
 import FAQSection from "./FAQ";
+import { useTheme } from '@/store/theme-provider';
 
 const FAQ_Part: React.FC = () => {
+
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
   
-  // Please add your questions here dont touch the code // 
-  // this part could be included in backend as of now its front end specific //
+  // Add your questions here, don't touch the code
   const faqs = [
     {
       question: "What is DevForces?",
@@ -18,15 +21,11 @@ const FAQ_Part: React.FC = () => {
       question: "Is DevForces free?",
       answer: "Yes, DevForces is completely free for all users."
     },
-    // un-comment and add question here
-    // {
-    //   question: "Dummy Question",
-    //   answer: "Dummy Answer"
-    // }
+    // Add more questions here
   ];
 
   return (
-    <div className="h-auto pt-10 pb-20 bg-gray-900 p-6">
+    <div className={`h-auto pt-10 pb-20 ${isDarkMode ? 'bg-black text-white' : 'bg-gray-300 text-gray-900'} p-6`}>
       <FAQSection faqs={faqs} />
     </div>
   );

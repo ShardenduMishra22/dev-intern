@@ -1,33 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Testimonial from './Testimonial';
-import FAQ_PART from "./FAQ_Part"
+import FAQ_PART from "./FAQ_Part";
 import Footer from './Footer';
+import Contact from './Contact';
+import Features from './Features';
+import { useTheme } from '../../store/theme-provider'; 
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const { theme } = useTheme();
 
   const handleClick = () => {
     navigate('/CSS-Battles');
   };
 
+  const isDarkMode = theme === 'dark';
+
   return (
     <>
-    <div className={`min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-gray-300 text-gray-900'} transition-colors duration-300`}>
-      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      <div className="relative">
-        {/* Full-Screen Hero Section */}
-        <section className="min-h-screen flex items-center justify-center px-4">
-          <div className="max-w-4xl mx-auto text-center">
-          <p className="mb-10 text-xl md:text-2xl relative rounded-full px-3 py-1 leading-6 text-gray-600 ring-2 ring-gray-900/10 hover:ring-gray-900/20">
-          Announcing our next round of funding. <a href="#" className="font-semibold text-purple-500"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
-        </p>
+      <div className={`min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-gray-300 text-gray-900'} transition-colors duration-300`}>
+        <Navbar />
+        <div className="relative">
+          {/* Full-Screen Hero Section */}
+          <section className="min-h-screen flex items-center justify-center px-4">
+            <div className="max-w-4xl mx-auto text-center">
+            <p className="mb-10 text-xl md:text-2xl relative rounded-full px-3 py-1 leading-6 text-gray-600 ring-2 ring-gray-900/10 hover:ring-gray-900/20">
+              Announcing our next round of funding. <a href="#" className="font-semibold text-purple-500"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+            </p>
             <h1 className={`text-3xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               DevForces | A Competitive Development Platform 
             </h1>
@@ -85,27 +86,12 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
-      <div>
-          <Testimonial/>
+        <Features />
+        <Testimonial />
+        <Contact />
+        <FAQ_PART />
+        <Footer />
       </div>
-      {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
-
-
-      {/* Here Starts The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
-      <div>
-          <FAQ_PART/>
-      </div>
-      {/* Here ENDs The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
-
-
-      {/* Here Starts The Footer SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
-      <div>
-          <Footer/>
-      </div>
-      {/* Here ENDs The Footer SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
-    
-    </div>
     </>
   );
 };

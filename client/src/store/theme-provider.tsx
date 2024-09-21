@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState, useMemo } from 'react';
+// /pages/store/theme-provider.tsx
+import { createContext, useEffect, useState, useMemo, useContext } from 'react';
 
 type Theme = 'dark' | 'light' | 'system';
 
@@ -65,3 +66,6 @@ export function ThemeProvider({
     </ThemeProviderContext.Provider>
   );
 }
+
+// Exporting the context for use in other components
+export const useTheme = () => useContext(ThemeProviderContext);
