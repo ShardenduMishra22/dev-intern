@@ -1,15 +1,20 @@
 import { FaRegBuilding, FaPhoneAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import { useTheme } from "@/store/theme-provider";
 
 const Contact = () => {
+  const { theme } = useTheme();
+
+  const isDarkMode = theme === 'dark';
+
   return (
-    <div className="flex flex-col md:flex-row bg-gray-900 text-white p-48 rounded-lg shadow-lg">
+    <div className={`flex flex-col md:flex-row ${isDarkMode ? 'bg-black text-slate-900' : 'bg-gray-300 text-gray-900'} p-48 rounded-lg shadow-lg `}>
       <div className="md:w-1/2 pr-8 relative overflow-hidden">
-        <h2 className="text-5xl font-bold mb-4">Get in touch</h2>
-        <p className="mb-6 text-gray-400 text-2xl">
+        <h2 className={`text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>Get in touch</h2>
+        <p className={`mb-6 text-gray-500 text-2xl`}>
           Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.
         </p>
-        <div className="space-y-4">
+        <div className={`space-y-4 ${isDarkMode ? 'text-white': 'text-black'}`}>
           <div className="flex items-center">
             <FaRegBuilding className="mr-3 text-indigo-500" />
             <div className="flex flex-row">
@@ -41,48 +46,48 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="md:w-1/2 mt-8 md:mt-0">
+      <div className="md:w-1/2 mt-8 md:mt-0 ">
         <form className="space-y-4">
           <div className="flex space-x-4">
             <div className="w-1/2">
-              <label className="block text-sm font-medium mb-1">First name</label>
+              <label className={`block text-sm font-medium mb-1 ${isDarkMode ? 'text-white': 'text-black'}`}>First name</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 ${isDarkMode ? 'bg-black text-gray-800' : 'bg-gray-300 text-gray-900'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-900"
               />
             </div>
             <div className="w-1/2">
-              <label className="block text-sm font-medium mb-1">Last name</label>
+              <label className={`block text-sm font-medium mb-1 ${isDarkMode ? 'text-white': 'text-black'}`}>Last name</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 ${isDarkMode ? 'bg-black text-black' : 'bg-gray-300 text-gray-900'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-900"
               />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Email</label>
+            <label className={`block text-sm font-medium mb-1 ${isDarkMode ? 'text-white': 'text-black'}`}>Email</label>
             <input
               type="email"
-              className="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-3 py-2 bg-gray-800${isDarkMode ? 'bg-black text-black' : 'bg-gray-300 text-gray-900'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-900"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Phone number</label>
+            <label className={`block text-sm font-medium mb-1 ${isDarkMode ? 'text-white': 'text-black'}`}>Phone number</label>
             <input
               type="tel"
-              className="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-3 py-2 ${isDarkMode ? 'bg-black text-black' : 'bg-gray-300 text-gray-900'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-900"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Message</label>
+            <label className={`block text-sm font-medium mb-1 ${isDarkMode ? 'text-white': 'text-black'}`}>Message</label>
             <textarea
               rows={4}
-              className="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-3 py-2 ${isDarkMode ? 'bg-black text-black' : 'bg-gray-300 text-gray-900'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-900"
             ></textarea>
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300"
+            className="w-full bg-purple-900 text-white py-2 px-4 rounded-md hover:bg-purple-600 transition duration-300"
           >
             Send message
           </button>

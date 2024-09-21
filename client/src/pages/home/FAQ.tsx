@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { useTheme } from '@/store/theme-provider';
 
 type FAQProps = {
   question: string;
@@ -7,6 +8,8 @@ type FAQProps = {
 };
 
 const FAQ: React.FC<FAQProps> = ({ question, answer }) => {
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,7 +18,7 @@ const FAQ: React.FC<FAQProps> = ({ question, answer }) => {
         className="flex justify-between items-center w-full py-4 text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-slate-200 font-medium">{question}</span>
+        <span className={`${isDarkMode ? 'text-slate-200' : 'text-gray-900'} font-medium`}>{question}</span>
         <span className={`transition-transform duration-700 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
           {!isOpen ? (
             <Plus className="text-green-400" />
@@ -40,9 +43,12 @@ type FAQSectionProps = {
 };
 
 const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
+  const {theme} = useTheme();
+  const isDarkMode = theme === 'dark';
+
   return (
     <div className="max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6 text-white">FAQ</h2>
+      <h2 className={`text-5xl font-bold mb-6 ${isDarkMode ? 'text-white': 'text-gray-900'}`}>FAQ</h2>
       <div className="space-y-2">
         {faqs.map((faq, index) => (
           <FAQ key={index} question={faq.question} answer={faq.answer} />
