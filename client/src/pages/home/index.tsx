@@ -4,6 +4,8 @@ import Navbar from '../../components/Navbar';
 import Testimonial from './Testimonial';
 import FAQ_PART from "./FAQ_Part"
 import Footer from './Footer';
+import Contact from './Contact';
+import Features from './Features';
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -85,12 +87,19 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
 
+      <div>
+        <Features />
+      </div>
+
       {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
       <div>
           <Testimonial/>
       </div>
       {/* Here Starts The Testimonial SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
-
+      
+      <div>
+        <Contact />
+      </div>
 
       {/* Here Starts The FAQ SECTION // CAUTION :IT CAN BE SHIFTED PLEASE MOVE THE COMMENTS ALONG WITH THE CODE */}
       <div>
